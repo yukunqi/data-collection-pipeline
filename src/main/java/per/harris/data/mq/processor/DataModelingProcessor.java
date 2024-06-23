@@ -1,7 +1,6 @@
 package per.harris.data.mq.processor;
 
-import per.harris.data.core.MiddleProcessor;
-import per.harris.data.core.PipelineContext;
+import per.harris.data.core.AbstractMiddleProcessor;
 import per.harris.data.pojo.UniformDataModel;
 
 import java.util.Map;
@@ -10,13 +9,13 @@ import java.util.Map;
  * 根据CTL文件，完成数据建模过程
  * 功能包括：自定义的数据字段解析、数据类型转换、数据值处理等
  */
-public class DataModelingProcessor implements MiddleProcessor<UniformDataModel,UniformDataModel> {
+public class DataModelingProcessor extends AbstractMiddleProcessor<UniformDataModel, UniformDataModel> {
 
 
     @Override
-    public PipelineContext<UniformDataModel> processData(PipelineContext<UniformDataModel> input) {
+    public UniformDataModel processData(UniformDataModel input) {
 
-        Map<String, Object> data = input.getData().getData();
+        Map<String, Object> data = input.getData();
 
         for(Map.Entry<String,Object> entry : data.entrySet()){
             String key = entry.getKey();

@@ -1,17 +1,18 @@
 package per.harris.data.mq.processor;
 
-import per.harris.data.core.MiddleProcessor;
+import per.harris.data.core.AbstractMiddleProcessor;
 import per.harris.data.core.PipelineContext;
 import per.harris.data.pojo.DataSendResponse;
 import per.harris.data.pojo.UniformDataModel;
 
-public class RedisCountProcessor implements MiddleProcessor<UniformDataModel, UniformDataModel> {
+public class RedisCountProcessor extends AbstractMiddleProcessor<UniformDataModel, UniformDataModel> {
 
 
     @Override
-    public PipelineContext<UniformDataModel> processData(PipelineContext<UniformDataModel> input) {
+    public UniformDataModel processData(UniformDataModel input) {
+        PipelineContext pipelineContext = this.runningContextThreadLocal.get();
 
-        DataSendResponse dataSendResponse = (DataSendResponse) input.getHeader("x-send-result");
+        DataSendResponse dataSendResponse = (DataSendResponse) pipelineContext.getHeader("x-send-result");
 
         System.out.println("do redis count failed or success based on x-sender-result header");
 

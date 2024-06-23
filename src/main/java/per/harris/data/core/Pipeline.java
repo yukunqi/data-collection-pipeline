@@ -6,9 +6,9 @@ public interface Pipeline<T,U extends UniformDataModel,R> {
 
     R inPipeline(T input);
 
-    void addStartingProcessor(StartingProcessor<T,U> startingProcessor);
+    void addProcessor(AbstractMiddleProcessor<U, U> processor);
 
-    void addEndingProcessor(EndingProcessor<U,R> endingProcessor);
-
-    void addProcessor(MiddleProcessor<U,U> processor);
+    default String getName() {
+        return this.getClass().getName();
+    }
 }
