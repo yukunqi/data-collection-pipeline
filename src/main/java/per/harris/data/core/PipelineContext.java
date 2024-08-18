@@ -68,8 +68,10 @@ public class PipelineContext {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
+        sb.append("PipelineContext:\n");
         sb.append(String.format("instanceId:%s\nrunningTime:%d\n", instanceId, getRunningTime()));
-
+        sb.append(String.format("status:%d\n", getStatus()));
+        sb.append("each processor status duration\n");
         this.runningInformationMap.forEach((k, v) -> {
             sb.append(String.format("processorName:%s status:%d duration:%d\n", k, v.getStatus(), v.getDuration()));
         });
