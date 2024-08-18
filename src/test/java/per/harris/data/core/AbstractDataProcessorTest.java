@@ -2,9 +2,10 @@ package per.harris.data.core;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import per.harris.data.core.processor.AbstractMiddleProcessor;
+import per.harris.data.mq.pojo.UniformDataModel;
 import per.harris.data.mq.processor.DataProcessEndingEventPublisherProcessor;
 import per.harris.data.mq.processor.JsonDataReadProcessor;
-import per.harris.data.pojo.UniformDataModel;
 
 public class AbstractDataProcessorTest {
 

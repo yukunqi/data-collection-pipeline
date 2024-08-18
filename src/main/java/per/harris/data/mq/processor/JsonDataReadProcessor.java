@@ -2,12 +2,12 @@ package per.harris.data.mq.processor;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import per.harris.data.core.AbstractStartingProcessor;
-import per.harris.data.pojo.UniformDataModel;
+import per.harris.data.core.processor.AbstractInputDataProcessor;
+import per.harris.data.mq.pojo.UniformDataModel;
 
 import java.util.HashMap;
 
-public class JsonDataReadProcessor extends AbstractStartingProcessor<String, UniformDataModel> {
+public class JsonDataReadProcessor extends AbstractInputDataProcessor<String, UniformDataModel> {
 
     private ObjectMapper objectMapper = new ObjectMapper();
 

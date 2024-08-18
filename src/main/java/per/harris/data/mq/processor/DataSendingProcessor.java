@@ -1,9 +1,8 @@
 package per.harris.data.mq.processor;
 
-import per.harris.data.core.AbstractMiddleProcessor;
-import per.harris.data.core.PipelineContext;
-import per.harris.data.pojo.DataSendResponse;
-import per.harris.data.pojo.UniformDataModel;
+import per.harris.data.core.processor.AbstractMiddleProcessor;
+import per.harris.data.mq.pojo.DataSendResponse;
+import per.harris.data.mq.pojo.UniformDataModel;
 
 
 /**
@@ -12,16 +11,14 @@ import per.harris.data.pojo.UniformDataModel;
 public class DataSendingProcessor extends AbstractMiddleProcessor<UniformDataModel, UniformDataModel> {
     @Override
     public UniformDataModel processData(UniformDataModel input) {
-        PipelineContext pipelineContext = this.runningContextThreadLocal.get();
-
         //sending data to third party
         System.out.print("send data to third party and received sendResponse\n");
 
         DataSendResponse dataSendResponse = new DataSendResponse(true,null);
 
-        System.out.println("add send response to header and transfer to next");
-
-        pipelineContext.addHeader("x-send-result", dataSendResponse);
+        if (dataSendResponse.isSuccess()) {
+            System.out.println("success so we count success in redis");
+        }
 
         return input;
     }

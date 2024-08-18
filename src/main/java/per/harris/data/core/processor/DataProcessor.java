@@ -1,4 +1,4 @@
-package per.harris.data.core;
+package per.harris.data.core.processor;
 
 
 public interface DataProcessor<T,R> {
@@ -7,6 +7,4 @@ public interface DataProcessor<T,R> {
     default String getName() {
         return this.getClass().getName();
     }
-
-    ;
 }

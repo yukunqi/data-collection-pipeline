@@ -2,8 +2,11 @@ package per.harris.data.mq;
 
 import per.harris.data.core.ProcessorChainPipeline;
 import per.harris.data.core.monitor.HashMapNodeStatusCollector;
-import per.harris.data.mq.processor.*;
-import per.harris.data.pojo.UniformDataModel;
+import per.harris.data.mq.pojo.UniformDataModel;
+import per.harris.data.mq.processor.DataModelingProcessor;
+import per.harris.data.mq.processor.DataProcessEndingEventPublisherProcessor;
+import per.harris.data.mq.processor.DataSendingProcessor;
+import per.harris.data.mq.processor.JsonDataReadProcessor;
 
 public class HiveBigDataTableMQAutoConfiguration {
 
@@ -19,8 +22,6 @@ public class HiveBigDataTableMQAutoConfiguration {
         processorChainPipeline.addProcessor(new DataModelingProcessor());
         //third step send data to downstream server
         processorChainPipeline.addProcessor(new DataSendingProcessor());
-        //fourth step count data in redis
-        processorChainPipeline.addProcessor(new RedisCountProcessor());
         //final step publish event
         processorChainPipeline.addEndingProcessor(new DataProcessEndingEventPublisherProcessor());
 

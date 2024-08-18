@@ -1,7 +1,7 @@
 package per.harris.data.mq.processor;
 
-import per.harris.data.core.AbstractMiddleProcessor;
-import per.harris.data.pojo.UniformDataModel;
+import per.harris.data.core.processor.AbstractMiddleProcessor;
+import per.harris.data.mq.pojo.UniformDataModel;
 
 import java.util.Map;
 

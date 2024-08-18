@@ -1,12 +1,15 @@
 package per.harris.data.core;
 
-import per.harris.data.pojo.UniformDataModel;
+import per.harris.data.core.pojo.BaseDataModel;
+import per.harris.data.core.processor.DataProcessor;
 
-public interface Pipeline<T,U extends UniformDataModel,R> {
+import java.util.Optional;
 
-    R inPipeline(T input);
+public interface Pipeline<T, U extends BaseDataModel, R> {
 
-    void addProcessor(AbstractMiddleProcessor<U, U> processor);
+    Optional<R> inPipeline(T input);
+
+    void addProcessor(DataProcessor<U, U> processor);
 
     default String getName() {
         return this.getClass().getName();

@@ -1,4 +1,4 @@
-package per.harris.data.pojo;
+package per.harris.data.mq.pojo;
 
 public class DataSendResponse {
 

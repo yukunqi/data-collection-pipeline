@@ -1,8 +1,10 @@
-package per.harris.data.pojo;
+package per.harris.data.mq.pojo;
+
+import per.harris.data.core.pojo.BaseDataModel;
 
 import java.util.Map;
 
-public class UniformDataModel {
+public class UniformDataModel extends BaseDataModel {
 
     private Map<String,Object> data;
 

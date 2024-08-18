@@ -1,6 +1,7 @@
 package per.harris.data.core;
 
 import per.harris.data.core.monitor.ProcessorRunningInformation;
+import per.harris.data.core.processor.DataProcessor;
 
 import java.util.HashMap;
 import java.util.List;
@@ -27,8 +28,8 @@ public class PipelineContext {
         }
     }
 
-    public void registerProcessorName(List<? extends AbstractMiddleProcessor<?, ?>> processorList) {
-        for (AbstractMiddleProcessor<?, ?> processor : processorList) {
+    public void registerProcessorName(List<? extends DataProcessor<?, ?>> processorList) {
+        for (DataProcessor<?, ?> processor : processorList) {
             this.runningInformationMap.put(processor.getName(), null);
         }
     }
