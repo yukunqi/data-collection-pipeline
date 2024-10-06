@@ -1,4 +1,4 @@
-package per.harris.data.core;
+package per.harris.data.core.pipeline;
 
 import per.harris.data.core.exception.ProcessorExecutedException;
 import per.harris.data.core.monitor.NodeStatusCollector;

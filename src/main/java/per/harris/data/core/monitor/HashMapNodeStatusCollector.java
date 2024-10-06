@@ -1,6 +1,6 @@
 package per.harris.data.core.monitor;
 
-import per.harris.data.core.PipelineContext;
+import per.harris.data.core.pipeline.PipelineContext;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

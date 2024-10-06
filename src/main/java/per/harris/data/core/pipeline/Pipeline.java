@@ -1,4 +1,4 @@
-package per.harris.data.core;
+package per.harris.data.core.pipeline;
 
 import per.harris.data.core.pojo.BaseDataModel;
 import per.harris.data.core.processor.DataProcessor;

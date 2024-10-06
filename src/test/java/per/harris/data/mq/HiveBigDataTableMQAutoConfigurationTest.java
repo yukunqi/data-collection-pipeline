@@ -3,7 +3,7 @@ package per.harris.data.mq;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
-import per.harris.data.core.ProcessorChainPipeline;
+import per.harris.data.core.pipeline.ProcessorChainPipeline;
 import per.harris.data.core.processor.AbstractMiddleProcessor;
 import per.harris.data.mq.pojo.UniformDataModel;
 

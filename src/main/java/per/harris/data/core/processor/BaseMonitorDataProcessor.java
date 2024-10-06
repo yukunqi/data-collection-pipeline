@@ -1,7 +1,7 @@
 package per.harris.data.core.processor;
 
-import per.harris.data.core.PipelineContext;
 import per.harris.data.core.monitor.ProcessorRunningInformation;
+import per.harris.data.core.pipeline.PipelineContext;
 
 public class BaseMonitorDataProcessor<T, R> {
 

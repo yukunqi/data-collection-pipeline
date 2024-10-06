@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
-import per.harris.data.core.ProcessorChainPipeline;
+import per.harris.data.core.pipeline.ProcessorChainPipeline;
 import per.harris.data.examples.filter.IdExampleDO;
 
 import java.util.Optional;
@@ -35,7 +35,7 @@ public class AbstractFilterDataProcessorTest {
     }
 
     @Test
-    void filter_when_Id_contains_abc_then_expected_result_is_not_null() {
+    void filter_when_Id_not_contains_abc_then_expected_result_is_not_null() {
         String id = "123";
         Optional<String> result = processorChainPipeline.inPipeline(id);
         Assertions.assertTrue(result.isPresent());
