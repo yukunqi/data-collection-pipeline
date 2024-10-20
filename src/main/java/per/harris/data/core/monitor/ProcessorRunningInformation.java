@@ -18,6 +18,10 @@ public class ProcessorRunningInformation {
         this.status = 0;
     }
 
+    public Instant getEndTime() {
+        return endTime;
+    }
+
     public void processFinished() {
         this.status = 1;
         this.endTime = Instant.now();
